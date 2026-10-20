@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edureach.ui.controllers.LoginController">
+    <left>
+        <VBox styleClass="login-left" spacing="10">
+            <Label text="ER" styleClass="logo-badge"/>
+            <Label text="EduReach" styleClass="login-brand"/>
+            <Label text="A community digital literacy and skill assessment&#10;system for learning centers"
+                   styleClass="login-bullet" wrapText="true"/>
+            <Region prefHeight="12"/>
+            <Label text="•  Works offline, no internet needed" styleClass="login-bullet"/>
+            <Label text="•  Instant quiz feedback and skill badges" styleClass="login-bullet"/>
+            <Label text="•  Certificates with verifiable codes" styleClass="login-bullet"/>
+            <Label text="•  Keyboard, screen-reader and high-contrast friendly" styleClass="login-bullet"/>
+            <Region prefHeight="12"/>
+            <Label text="•  NEW: remedial module for failing learners" styleClass="login-bullet"/>
+            <Label text="•  NEW: hard-question analytics for instructors" styleClass="login-bullet"/>
+            <Label text="•  NEW: optional K-12 curriculum (Math, Elem-HS)" styleClass="login-bullet"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox styleClass="login-right" spacing="10">
+            <Label fx:id="welcomeLabel" styleClass="heading"/>
+            <Label fx:id="signinLabel" styleClass="muted"/>
+            <HBox fx:id="roleBox" spacing="6">
+                <padding><Insets top="8" bottom="8"/></padding>
+            </HBox>
+            <Label fx:id="userLabel" styleClass="tiny"/>
+            <TextField fx:id="usernameField" promptText="maria.santos"/>
+            <Label fx:id="passLabel" styleClass="tiny"/>
+            <PasswordField fx:id="passwordField" promptText="••••••••"/>
+            <Label fx:id="errorLabel" styleClass="login-error" wrapText="true"/>
+            <Button fx:id="loginBtn" styleClass="btn-grad" maxWidth="Infinity"/>
+            <Label styleClass="muted tiny" wrapText="true" maxWidth="420"
+                   text="Your personal data is processed only for class management and progress tracking, in line with the Data Privacy Act of 2012 (RA 10173). Three failed attempts lock the account for 60 seconds."/>
+            <HBox spacing="6" styleClass="a11y-row">
+                <padding><Insets top="10"/></padding>
+                <Button fx:id="fontMinus" styleClass="btn-chip" text="A-"/>
+                <Button fx:id="fontPlus" styleClass="btn-chip" text="A+"/>
+                <Button fx:id="contrastBtn" styleClass="btn-chip"/>
+                <Button fx:id="langBtn" styleClass="btn-chip" text="EN | FIL"/>
+                <Button fx:id="themeBtn" styleClass="btn-chip"/>
+            </HBox>
+            <Label styleClass="muted tiny"
+                   text="Demo accounts — student: maria.santos / learn123 · instructor: ms.reyes / teach123 · admin: admin / admin123"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,215 @@
+/* ============================================================
+   EduReach - single stylesheet, theme via root style classes:
+     .dark  -> dark mode (shipped default)
+     .hc    -> high contrast
+     .fs0..fs3 -> font scale
+   ============================================================ */
+
+.root {
+    -er-bg:        #FAF6EC;
+    -er-card:      #FFFFFF;
+    -er-inset:     #FBF7EE;
+    -er-border:    #EFE6D4;
+    -er-text:      #2B2118;
+    -er-muted:     #8A7F6F;
+    -er-accent:    #E8871E;
+    -er-accent-2:  #F6C244;
+    -er-track:     #F0E7D6;
+    -er-ok-bg:     #E4F2E0;  -er-ok-fg:   #3E7A3A;
+    -er-warn-bg:   #FCE8D2;  -er-warn-fg: #B4610E;
+    -er-dark-bg:   #2B2118;  -er-dark-fg: #F6C244;
+    -er-sel:       #FDEED3;
+    -fx-font-size: 13px;
+    -fx-font-family: "System";
+}
+
+.dark {
+    -er-bg:        #171310;
+    -er-card:      #221C15;
+    -er-inset:     #1B1610;
+    -er-border:    #3B3226;
+    -er-text:      #F3EAD8;
+    -er-muted:     #A79A85;
+    -er-accent:    #F09A2E;
+    -er-accent-2:  #F6C244;
+    -er-track:     #332B20;
+    -er-ok-bg:     #22301E;  -er-ok-fg:   #9CCF96;
+    -er-warn-bg:   #3A2817;  -er-warn-fg: #F0B26E;
+    -er-dark-bg:   #F6C244;  -er-dark-fg: #2B2118;
+    -er-sel:       #3A2E1C;
+}
+
+/* themed label ink (modena's default text is dark -> invisible on dark cards) */
+.label { -fx-text-fill: -er-text; }
+
+/* font scale (accessibility P7) */
+.fs0 { -fx-font-size: 11.5px; }
+.fs1 { -fx-font-size: 13px;   }
+.fs2 { -fx-font-size: 14.5px; }
+.fs3 { -fx-font-size: 16.5px; }
+
+/* high contrast overrides */
+.hc { -er-border: #000000; -er-muted: #4d4d4d; -er-track: #d9d9d9; }
+.hc.dark { -er-border: #FFFFFF; -er-muted: #E6E6E6; -er-track: #555555; }
+.hc .card, .hc .chip, .hc .text-field, .hc .combo-box { -fx-border-width: 2; }
+
+/* ---------- layout ---------- */
+.screen { -fx-background-color: -er-bg; -fx-padding: 18; -fx-spacing: 14; }
+
+.topbar { -fx-padding: 10 16 6 16; -fx-alignment: center-left; -fx-spacing: 8;
+          -fx-background-color: -er-bg; }
+.crumb-muted { -fx-text-fill: -er-muted; }
+.crumb-here  { -fx-text-fill: -er-accent; -fx-font-weight: bold; }
+
+.tabbar { -fx-spacing: 4; -fx-padding: 4 16 8 16; -fx-background-color: -er-bg; }
+.tab { -fx-background-color: transparent; -fx-text-fill: -er-muted;
+       -fx-background-radius: 999; -fx-padding: 5 12 5 12; -fx-cursor: hand; }
+.tab:hover { -fx-background-color: -er-track; }
+.tab-active { -fx-background-color: -er-accent-2; -fx-text-fill: -er-dark-bg; -fx-font-weight: bold; }
+.dark .tab-active { -fx-text-fill: #2B2118; }
+
+.sidebar { -fx-background-color: linear-gradient(to bottom, #F7C645 0%, #EF8A17 100%); -fx-background-radius: 22;
+           -fx-padding: 14 8 14 8; -fx-spacing: 6; -fx-alignment: top-center;
+           -fx-pref-width: 86; -fx-min-width: 86; }
+.logo-badge { -fx-background-color: #2B2118; -fx-background-radius: 12;
+              -fx-text-fill: #F6C244; -fx-font-weight: bold; -fx-font-size: 14px;
+              -fx-padding: 8 10 8 10; }
+.nav-btn { -fx-background-color: transparent; -fx-text-fill: #4a2f07;
+           -fx-font-size: 10px; -fx-padding: 8 4 8 4; -fx-background-radius: 12;
+           -fx-cursor: hand; -fx-alignment: center; }
+.dark .nav-btn { -fx-text-fill: #3a2504; }
+.nav-btn:hover { -fx-background-color: rgba(255,255,255,0.35); }
+.nav-btn-active { -fx-background-color: #FFFDF6; -fx-font-weight: bold; }
+.nav-glyph { -fx-font-size: 15px; }
+
+/* ---------- cards & hero ---------- */
+.card { -fx-background-color: -er-card; -fx-background-radius: 14;
+        -fx-border-color: -er-border; -fx-border-radius: 14;
+        -fx-padding: 14; -fx-spacing: 10; }
+.card-title { -fx-font-weight: bold; -fx-text-fill: -er-text; }
+.muted { -fx-text-fill: -er-muted; }
+.tiny { -fx-font-size: 0.85em; }
+.heading { -fx-font-size: 1.25em; -fx-font-weight: bold; -fx-text-fill: -er-text; }
+
+.hero { -fx-background-color: linear-gradient(to right, #F7C645 0%, #EF8A17 100%); -fx-background-radius: 16;
+        -fx-padding: 16 20 16 20; -fx-alignment: center-left; -fx-spacing: 12; }
+.hero-title { -fx-font-size: 1.5em; -fx-font-weight: bold; -fx-text-fill: #2B2118; }
+.hero-sub { -fx-text-fill: #5c3a08; }
+.dark .hero-title { -fx-text-fill: #241a0c; }
+.dark .hero-sub { -fx-text-fill: #4d3208; }
+
+.course-tile { -fx-background-color: linear-gradient(to right, #F7C645 0%, #EF8A17 100%); -fx-background-radius: 12 12 0 0;
+               -fx-padding: 22 12 10 12; -fx-text-fill: #2B2118; -fx-font-weight: bold;
+               -fx-alignment: bottom-left; -fx-cursor: hand; }
+
+/* ---------- buttons ---------- */
+.btn-grad { -fx-background-color: linear-gradient(to right, #F7C645 0%, #EF8A17 100%); -fx-text-fill: #2B2118; -fx-font-weight: bold;
+            -fx-background-radius: 10; -fx-padding: 8 18 8 18; -fx-cursor: hand; }
+.btn-dark { -fx-background-color: #2B2118; -fx-text-fill: #F6C244; -fx-font-weight: bold;
+            -fx-background-radius: 10; -fx-padding: 8 16 8 16; -fx-cursor: hand; }
+.dark .btn-dark { -fx-background-color: #F6C244; -fx-text-fill: #2B2118; }
+.btn-outline { -fx-background-color: transparent; -fx-border-color: -er-border;
+               -fx-border-radius: 10; -fx-background-radius: 10; -fx-text-fill: -er-text;
+               -fx-padding: 7 14 7 14; -fx-cursor: hand; }
+.btn-outline:hover { -fx-border-color: -er-accent; -fx-text-fill: -er-accent; }
+.btn-chip { -fx-background-color: -er-card; -fx-border-color: -er-border; -fx-border-radius: 999;
+            -fx-background-radius: 999; -fx-text-fill: -er-text; -fx-padding: 4 10 4 10;
+            -fx-cursor: hand; }
+.btn-chip-on { -fx-background-color: -er-dark-bg; -fx-text-fill: -er-dark-fg; -fx-font-weight: bold; }
+.btn:disabled { -fx-opacity: 0.45; }
+
+/* ---------- chips ---------- */
+.chip { -fx-background-radius: 999; -fx-padding: 3 10 3 10; -fx-font-size: 0.85em;
+        -fx-font-weight: bold; }
+.chip-ok   { -fx-background-color: -er-ok-bg;   -fx-text-fill: -er-ok-fg; }
+.chip-warn { -fx-background-color: -er-warn-bg; -fx-text-fill: -er-warn-fg; }
+.chip-dark { -fx-background-color: -er-dark-bg; -fx-text-fill: -er-dark-fg; }
+.chip-mute { -fx-background-color: -er-track;   -fx-text-fill: -er-muted; }
+
+/* ---------- inputs ---------- */
+.text-field, .password-field, .combo-box, .text-area {
+    -fx-background-color: -er-card; -fx-background-radius: 10;
+    -fx-border-color: -er-border; -fx-border-radius: 10;
+    -fx-text-fill: -er-text; -fx-prompt-text-fill: -er-muted;
+    -fx-padding: 7 10 7 10;
+}
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-border-color: -er-accent;
+}
+.combo-box .list-cell { -fx-background-color: -er-card; -fx-text-fill: -er-text; }
+.combo-box-popup .list-view { -fx-background-color: -er-card; }
+.combo-box-popup .list-cell { -fx-background-color: -er-card; -fx-text-fill: -er-text; }
+.combo-box-popup .list-cell:filled:hover { -fx-background-color: -er-sel; }
+
+/* ---------- tables (manual rows) ---------- */
+.tbl-head { -fx-text-fill: -er-muted; -fx-font-weight: bold; -fx-font-size: 0.8em; }
+.tbl-row { -fx-padding: 9 4 9 4; -fx-alignment: center-left; -fx-spacing: 10;
+           -fx-border-color: transparent transparent -er-border transparent; }
+.tbl-row:hover { -fx-background-color: -er-inset; -fx-background-radius: 8; }
+
+/* ---------- progress ---------- */
+.progress-bar > .track { -fx-background-color: -er-track; -fx-background-radius: 99;
+                         -fx-background-insets: 0; }
+.progress-bar > .bar { -fx-background-color: linear-gradient(to right, #F7C645 0%, #EF8A17 100%); -fx-background-radius: 99;
+                       -fx-background-insets: 0; -fx-padding: 3 0 3 0; }
+.progress-bar { -fx-pref-height: 8; }
+
+/* ---------- misc ---------- */
+.avatar { -fx-background-color: linear-gradient(to right, #F7C645 0%, #EF8A17 100%); -fx-background-radius: 999;
+          -fx-text-fill: #2B2118; -fx-font-weight: bold; -fx-alignment: center;
+          -fx-padding: 6 8 6 8; -fx-min-width: 30; -fx-min-height: 30; }
+.badge-dot { -fx-background-color: linear-gradient(to right, #F7C645 0%, #EF8A17 100%); -fx-background-radius: 999;
+             -fx-alignment: center; -fx-min-width: 44; -fx-min-height: 44;
+             -fx-font-size: 18px; -fx-text-fill: #2B2118; }
+.badge-off { -fx-background-color: -er-track; -fx-text-fill: -er-muted; }
+.option-row { -fx-background-color: -er-card; -fx-border-color: -er-border; -fx-border-radius: 10;
+              -fx-background-radius: 10; -fx-padding: 10 12 10 12; -fx-spacing: 10;
+              -fx-cursor: hand; -fx-alignment: center-left; }
+.option-row:hover { -fx-border-color: -er-accent-2; }
+.option-sel { -fx-border-color: -er-accent; -fx-background-color: -er-sel; }
+.qnav { -fx-background-color: -er-accent-2; -fx-text-fill: #2B2118; -fx-font-weight: bold;
+        -fx-background-radius: 8; -fx-alignment: center; -fx-min-width: 30; -fx-min-height: 26;
+        -fx-cursor: hand; }
+.qnav-cur { -fx-background-color: #2B2118; -fx-text-fill: #F6C244; }
+.qnav-off { -fx-background-color: -er-inset; -fx-text-fill: -er-muted;
+            -fx-border-color: -er-border; -fx-border-radius: 8; }
+.timer-pill { -fx-background-color: #FFFDF6; -fx-background-radius: 999;
+              -fx-text-fill: #2B2118; -fx-font-weight: bold; -fx-padding: 6 14 6 14;
+              -fx-font-size: 1.15em; }
+.cert-frame { -fx-border-color: -er-accent-2; -fx-border-radius: 14; -fx-border-width: 2;
+              -fx-background-color: -er-card; -fx-background-radius: 14;
+              -fx-padding: 26; -fx-alignment: center; -fx-spacing: 8; }
+.cert-name { -fx-font-size: 1.5em; -fx-font-weight: bold; -fx-text-fill: -er-accent; }
+.code-chip { -fx-font-family: monospace; -fx-background-color: -er-warn-bg;
+             -fx-text-fill: -er-warn-fg; -fx-padding: 4 10 4 10; -fx-background-radius: 6; }
+.scroll-pane { -fx-background-color: transparent; -fx-border-color: transparent; }
+.scroll-pane > .viewport { -fx-background-color: transparent; }
+.separator .line { -fx-border-color: -er-border transparent transparent transparent; }
+
+/* ---------- login ---------- */
+.login-left { -fx-background-color: linear-gradient(to bottom right, #F7C645 0%, #EF8A17 100%);
+              -fx-padding: 42; -fx-spacing: 6; }
+.dark .login-left { -fx-background-color: linear-gradient(to bottom right, #E3A62E 0%, #B8620C 100%); }
+.login-brand { -fx-font-size: 2.2em; -fx-font-weight: bold; -fx-text-fill: #2B2118; }
+.login-bullet { -fx-text-fill: #5c3a08; }
+.dark .login-bullet { -fx-text-fill: #40290a; }
+.login-right { -fx-background-color: -er-bg; -fx-padding: 42; -fx-alignment: center-left; }
+.login-error { -fx-text-fill: #C0392B; -fx-font-weight: bold; }
+.a11y-row { -fx-alignment: center-left; }
+.content { -fx-background-color: -er-bg; }
+.screen-shell { -fx-background-color: -er-bg; -fx-padding: 10; }
+
+/* dark-theme gradient overrides (looked-up colors cannot hold gradients) */
+.dark .sidebar, .dark .course-tile, .dark .avatar, .dark .badge-dot,
+.dark .login-left { -fx-background-color: linear-gradient(to bottom right, #E3A62E 0%, #C96F12 100%); }
+.dark .sidebar { -fx-background-color: linear-gradient(to bottom, #E3A62E 0%, #C96F12 100%); }
+.dark .hero, .dark .btn-grad { -fx-background-color: linear-gradient(to right, #E3A62E 0%, #D97A16 100%); }
+.dark .progress-bar > .bar { -fx-background-color: linear-gradient(to right, #E3A62E 0%, #D97A16 100%); }
+
+.badge-dot.badge-off, .dark .badge-dot.badge-off {
+    -fx-background-color: -er-track; -fx-text-fill: -er-muted;
+}
+
+/* nav labels sit on the orange sidebar / white active pill -> always dark ink */
+.nav-btn .label { -fx-text-fill: #4a2f07; }
+.dark .nav-btn .label { -fx-text-fill: #3a2504; }

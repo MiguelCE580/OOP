@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<!-- TODO(Phase 4): migrate the programmatic layout of this screen into FXML markup.
+     Phase 2-3 builds the widgets in the controller to move fast. -->
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:id="root" styleClass="screen" spacing="14"
+      fx:controller="edureach.ui.controllers.CurriculumController"/>

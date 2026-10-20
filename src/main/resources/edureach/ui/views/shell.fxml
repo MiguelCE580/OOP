@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edureach.ui.controllers.ShellController"
+            styleClass="screen-shell">
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar"/>
+    </left>
+    <top>
+        <VBox>
+            <HBox styleClass="topbar" spacing="6">
+                <Label fx:id="crumbPrev" styleClass="crumb-muted"/>
+                <Label text="/" styleClass="crumb-muted"/>
+                <Label fx:id="crumbHere" styleClass="crumb-here"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox fx:id="a11yBox" spacing="6"/>
+            </HBox>
+            <HBox fx:id="tabBar" styleClass="tabbar"/>
+        </VBox>
+    </top>
+    <center>
+        <StackPane fx:id="contentPane" styleClass="content"/>
+    </center>
+</BorderPane>
